@@ -1,23 +1,21 @@
 # Stephen Nolan
 
 
+# VI-mode for GNU readline (which bash uses)
 set editing-mode vi
+
 $if mode=vi
 
-set keymap vi-command
-# these are for vi-command mode
-Control-l: clear-screen
+    # C-l clear screen even in insert mode
+    set keymap vi-command
+    Control-l: clear-screen
 
-set keymap vi-insert
-# these are for vi-insert mode
-Control-l: clear-screen 
+    # C-p previous history item even in insert mode
+    set keymap vi-insert
+    Control-p: previous-history 
 
-set keymap vi-insert
-# these are for vi-insert mode
-Control-p: previous-history 
-
-set keymap vi-insert
-# these are for vi-insert mode
-Control-n: next-history 
+    # C-n next history item even in insert mode
+    set keymap vi-insert
+    Control-n: next-history 
 
 $endif
