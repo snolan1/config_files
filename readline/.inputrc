@@ -9,6 +9,8 @@ $if mode=vi
     # C-l clear screen even in insert mode
     set keymap vi-command
     Control-l: clear-screen
+    set keymap vi-insert
+    Control-l: clear-screen
 
     # C-p previous history item even in insert mode
     set keymap vi-insert
