@@ -1,0 +1,27 @@
+# Stephen Nolan
+# .bashrc_steve
+# 
+# My bash customizations in a separate file. Xubuntu, for example, already
+# has things in .bashrc that I don't want to overwrite. 
+#
+# Source this from .bash_profile or .bashrc as appropriate
+
+# "Force tmux to assume the terminal supports 256 colors"
+alias tmux='tmux -2'
+
+# VI-mode 
+set -o vi
+
+
+# Lectura
+#alias lectura='ssh TODO@lectura.cs.arizona.edu'
+alias lectura='echo "edit alias in .bashrc_steve"'
+
+# Debian/*buntu <= 14.04 update
+#alias uptodate='clear && sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+
+# OS X
+alias ls='ls -G'
+alias ll='ls -alF'
+
+echo "Steve bash preferences loaded."
