@@ -7,6 +7,12 @@ set nocompatible
 " Syntax highlighting
 syntax on
 
+" Enable filetype detection if it was not yet switched on
+filetype plugin on
+
+" Load filetype-specific indent rules
+filetype plugin indent on
+
 " Relative line numbering
 set relativenumber
 
@@ -22,10 +28,20 @@ set ruler
 " Always show status bar, even when editing one file
 set laststatus=2
 
+" Bash - like completion for filenames
+set wildmode=longest,list,full
+set wildmenu
+
+" Yank to system clipboard when possible
+set clipboard=unnamedplus
+
 " Encoding and end-of-line
 set encoding=utf8
 set fileformats=unix,dos,mac
 
+" Allow incrementing of 'alpha' glyphs (A, B, etc) in addition to octal, hex,
+" decimal numbers
+set nrformats+=alpha
 
 " Insert spaces to 'make' a 'tab'
 set expandtab
@@ -38,6 +54,9 @@ set shiftwidth=4
 
 " # of spaces that a <Tab> in the file counts for
 set tabstop=4
+
+" Keep a 'buffer' of lines around the cursor when near the edge of screen
+set scrolloff=5
 
 " Copy indent from current line when starting a new line
 set autoindent "Auto indent
@@ -52,6 +71,13 @@ set formatoptions+=t
 " Blink matching () [] {} on typing them
 set showmatch
 
+" Start showing matches while typing out a search pattern
+set incsearch
+
+" When a file has been detected to have been changed outside of Vim and it 
+" has not been changed inside of Vim, automatically read it again
+set autoread
+
 
 "My defined leader key
 let mapleader=","
@@ -62,6 +88,12 @@ nnoremap <leader>b :w <Bar> !clear && pdflatex Homework10.tex && evince Homework
 
 " ,w  - Write out the file - faster than having to [shift] + ; , w , RET
 nnoremap <leader>w :w <CR>
+
+" Force update of current file when it has changed outside of vim
+nnoremap <leader>e :edit <CR>
+
+" Toggle spell checking
+nnoremap <leader>s :setlocal spell! <CR>
 
 " Vim will try to use colors that look good on a dark or light background
 "set background=light
@@ -82,12 +114,6 @@ hi ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " Enable mouse on a machine with X-server
 "set mouse=a
-
-" Enable filetype detection if it was not yet switched on
-filetype plugin on
-
-" Load filetype-specific indent rules
-filetype plugin indent on
 
 " Return to last edit position when opening files (remember cursor location 
 " between edits)
