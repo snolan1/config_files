@@ -27,5 +27,12 @@ alias lectura='echo "edit alias in .bashrc_steve"'
 # OS X
 alias ls='ls -G'
 alias ll='ls -alF'
+alias grep='grep --color=auto'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias 335='cd ~/steve/school/335_Fall2015/'                                      
+alias pom25='sleep 1500; tput bel; say "Task period completed."'
+alias pom5='sleep 300; tput bel; say "Minor break completed."'
+alias pom35='sleep 2100; tput bel; say "Major break completed."'
+alias texter='/Users/steve/steve/code/python/steve_texter/texter.py'
 
 echo "Steve bash preferences loaded."
