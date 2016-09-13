@@ -4,7 +4,11 @@
 # My bash customizations in a separate file. Xubuntu, for example, already
 # has things in .bashrc that I don't want to overwrite. 
 #
-# Source this from .bash_profile or .bashrc as appropriate
+# Source this from .bash_profile or .bashrc as appropriate. 
+
+#  Ex.     if [ -f ~/.bashrc_steve ]; then
+#              source ~/.bashrc_steve
+#          fi
 
 # "Force tmux to assume the terminal supports 256 colors"
 alias tmux='tmux -2'
