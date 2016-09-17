@@ -25,6 +25,9 @@ set colorcolumn=81
 " Show line, column, relative position in file in status line
 set ruler
 
+" Number of tabs that can be opened with $ vim -p (default is ~8)
+set tabpagemax=60
+
 " Always show status bar, even when editing one file
 set laststatus=2
 
