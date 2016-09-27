@@ -82,6 +82,10 @@ set incsearch
 set autoread
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom key mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "My defined leader key
 let mapleader=","
 
@@ -98,6 +102,16 @@ nnoremap <leader>e :edit <CR>
 " Toggle spell checking
 nnoremap <leader>s :setlocal spell! <CR>
 
+" Make ESC in normal mode a NOOP - Use Ctrl+[ instead
+" NOTE if this starts to feel slow, consider mapping something like jk to 
+" escape while in insert mode.
+inoremap <esc> <nop>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Vim will try to use colors that look good on a dark or light background
 "set background=light
 set background=dark
@@ -105,7 +119,8 @@ set background=dark
 " Colorscheme
 "colorscheme jellybeans
 "colorscheme solarized
-"
+
+
 " Zenburn
 let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
 colorscheme zenburn
