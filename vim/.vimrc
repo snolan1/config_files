@@ -102,10 +102,6 @@ nnoremap <leader>e :edit <CR>
 " Toggle spell checking
 nnoremap <leader>s :setlocal spell! <CR>
 
-" Make ESC in normal mode a NOOP - Use Ctrl+[ instead
-" NOTE if this starts to feel slow, consider mapping something like jk to 
-" escape while in insert mode.
-inoremap <esc> <nop>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
