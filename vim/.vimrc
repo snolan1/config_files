@@ -102,7 +102,8 @@ nnoremap <leader>e :edit <CR>
 " Toggle spell checking
 nnoremap <leader>s :setlocal spell! <CR>
 
-
+" df to exit INSERT mode
+inoremap df <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
