@@ -104,7 +104,7 @@ nnoremap <leader>s :setlocal spell! <CR>
 
 " df to exit INSERT mode (ESC mapped to NOP) to encourage speedy adoption
 inoremap <esc> <nop>
-inoremap df <esc>
+inoremap kj <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
