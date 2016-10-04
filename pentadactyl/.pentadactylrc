@@ -1,0 +1,12 @@
+" Increase scrolling speed for single lines
+map -b j 6j
+map -b k 6k
+
+" Toolbars visible
+set guioptions=brsnTB
+
+" Hint Keys
+set hintkeys=asdfjklqwertyupcvbmn
+
+" Size of hints
+:hi -a Hint font-size: 13pt !important;
