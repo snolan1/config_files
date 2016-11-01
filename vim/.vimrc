@@ -106,6 +106,9 @@ nnoremap <leader>s :setlocal spell! <CR>
 inoremap <esc> <nop>
 inoremap kj <esc>
 
+" ,p - toggle paste mode
+set pastetoggle=<leader>p
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
