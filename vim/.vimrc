@@ -123,7 +123,8 @@ set background=dark
 
 
 " Zenburn
-let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
+let g:zenburn_high_Contrast=0   " Toggles high-contrast mode
+" let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
 colorscheme zenburn
 
 " toggles the *color* of the colorcol
