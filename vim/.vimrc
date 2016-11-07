@@ -103,7 +103,7 @@ nnoremap <leader>e :edit <CR>
 nnoremap <leader>s :setlocal spell! <CR>
 
 " df to exit INSERT mode (ESC mapped to NOP) to encourage speedy adoption
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 inoremap kj <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
