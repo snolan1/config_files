@@ -102,8 +102,8 @@ nnoremap <leader>e :edit <CR>
 " Toggle spell checking
 nnoremap <leader>s :setlocal spell! <CR>
 
-" df to exit INSERT mode (ESC mapped to NOP) to encourage speedy adoption
-" inoremap <esc> <nop>
+" kj to exit INSERT mode 
+" inoremap <esc> <nop>          "Force adoption of binding
 inoremap kj <esc>
 
 " ,p - toggle paste mode
