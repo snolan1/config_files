@@ -1,6 +1,67 @@
 " Stephen Nolan
 " .vimrc
 
+
+
+" YOUCOMPLETEME PORTION """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'Valloric/YouCompleteMe'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+" 
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this linejjkjkjkjkj
+
+
+" END YOUCOMPLETEME PORTION """"""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+
+
+
+
+
+" Steve configuration below """""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Enable vim-specific functionality (that is not found in traditional Vi)
 set nocompatible
 
@@ -16,8 +77,9 @@ filetype plugin indent on
 " Relative line numbering
 set relativenumber
 
-" Highlight the current line
+" Highlight the current line and column
 set cursorline
+set cursorcolumn
 
 " Show a guide line at column 81
 set colorcolumn=81
@@ -81,6 +143,8 @@ set incsearch
 " has not been changed inside of Vim, automatically read it again
 set autoread
 
+" Allow switching to another buffer without saving the current shown buffer
+set hidden
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom key mappings
@@ -91,7 +155,7 @@ let mapleader=","
 
 
 " ,b  - 'Build' to build/compile/run tests of whatever I'm doing
-nnoremap <leader>b :w <Bar> !clear && pdflatex Homework10.tex && evince Homework10.pdf
+" nnoremap <leader>b :w <Bar> !clear && pdflatex Homework10.tex && evince Homework10.pdf
 
 " ,w  - Write out the file - faster than having to [shift] + ; , w , RET
 nnoremap <leader>w :w <CR>
@@ -109,6 +173,7 @@ inoremap kj <esc>
 " ,p - toggle paste mode
 set pastetoggle=<leader>p
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -124,7 +189,7 @@ set background=dark
 
 " Zenburn
 let g:zenburn_high_Contrast=0   " Toggles high-contrast mode
-" let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
+"let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
 colorscheme zenburn
 
 " toggles the *color* of the colorcol
@@ -145,3 +210,7 @@ autocmd BufReadPost *
 
 "" set omnifunc=syntaxcomplete#Complete
 
+" Miscellaneous below """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:EclimCompletionMethod = 'omnifunc'
