@@ -150,12 +150,12 @@ set hidden
 " Custom key mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"My defined leader key
+"Defined leader key
 let mapleader=","
 
-
 " ,b  - 'Build' to build/compile/run tests of whatever I'm doing
-" nnoremap <leader>b :w <Bar> !clear && pdflatex Homework10.tex && evince Homework10.pdf
+" nnoremap <leader>b :w <Bar> !clear && pdflatex Project10.tex && evince Project
+"10.pdf
 
 " ,w  - Write out the file - faster than having to [shift] + ; , w , RET
 nnoremap <leader>w :w <CR>
@@ -173,6 +173,21 @@ inoremap kj <esc>
 " ,p - toggle paste mode
 set pastetoggle=<leader>p
 
+" ,h - toggle zenburn high contrast mode
+nnoremap <leader>hc :call ToggleZenburnHighContrast()<cr>
+
+function! ToggleZenburnHighContrast()
+    if g:zenburn_high_Contrast
+        let g:zenburn_high_Contrast = 0
+        colorscheme zenburn
+        hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+    elseif !g:zenburn_high_Contrast
+        let g:zenburn_high_Contrast = 1
+        colorscheme zenburn
+        hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+    endif
+endfunction
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
@@ -188,8 +203,8 @@ set background=dark
 
 
 " Zenburn
-let g:zenburn_high_Contrast=0   " Toggles high-contrast mode
-"let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
+"let g:zenburn_high_Contrast=0   " Toggles high-contrast mode
+let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
 colorscheme zenburn
 
 " toggles the *color* of the colorcol
