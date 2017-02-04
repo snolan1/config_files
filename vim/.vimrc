@@ -177,11 +177,11 @@ set pastetoggle=<leader>p
 nnoremap <leader>hc :call ToggleZenburnHighContrast()<cr>
 
 function! ToggleZenburnHighContrast()
-    if g:zenburn_high_Contrast
+    if g:zenburn_high_Contrast && g:colors_name == "zenburn"
         let g:zenburn_high_Contrast = 0
         colorscheme zenburn
         hi ColorColumn ctermbg=lightgrey guibg=lightgrey
-    elseif !g:zenburn_high_Contrast
+    elseif !g:zenburn_high_Contrast && g:colors_name == "zenburn"
         let g:zenburn_high_Contrast = 1
         colorscheme zenburn
         hi ColorColumn ctermbg=lightgrey guibg=lightgrey
