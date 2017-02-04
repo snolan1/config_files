@@ -200,12 +200,13 @@ set background=dark
 " Colorscheme
 "colorscheme jellybeans
 "colorscheme solarized
+colorscheme gruvbox
 
 
 " Zenburn
 "let g:zenburn_high_Contrast=0   " Toggles high-contrast mode
 let g:zenburn_high_Contrast=1   " Toggles high-contrast mode
-colorscheme zenburn
+"colorscheme zenburn
 
 " toggles the *color* of the colorcol
 " in situations where the terminal/color scheme auto-sets it to something
