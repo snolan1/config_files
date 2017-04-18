@@ -11,7 +11,11 @@
 #          fi
 
 # "Force tmux to assume the terminal supports 256 colors"
-alias tmux='tmux -2'
+# alias tmux='tmux -2'
+
+# This is the only way I have found to be able to use 
+# the solarized colorscheme for vim inside of tmux
+alias tmux="TERM=screen-256color-bce tmux"
 
 # VI-mode 
 set -o vi
