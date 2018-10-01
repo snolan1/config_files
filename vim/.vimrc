@@ -160,6 +160,11 @@ set autoread
 " Allow switching to another buffer without saving the current shown buffer
 set hidden
 
+" Vim 'encryption' cipher 
+" Note: breakable, not appropriate for anything security-sensitive.
+set cryptmethod=blowfish2
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom leader mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
