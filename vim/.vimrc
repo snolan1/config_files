@@ -100,6 +100,9 @@ set ruler
 " certain filetypes
 set foldmethod=indent
 
+" Set threshold on folding depth
+" set foldnestmax=2
+
 " Number of tabs that can be opened with $ vim -p (default is ~8)
 set tabpagemax=60
 
