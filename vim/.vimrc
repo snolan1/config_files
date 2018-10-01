@@ -147,15 +147,15 @@ set autoread
 set hidden
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Custom key mappings
+" Custom leader mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Defined leader key
 let mapleader=","
 
-" ,b  - 'Build' to build/compile/run tests of whatever I'm doing
-" nnoremap <leader>b :w <Bar> !clear && pdflatex Project10.tex && evince Project
-"10.pdf
+" ,b  - 'Build'  - change as appropriate for respective build process of current
+" project
+nnoremap <leader>b :w <Bar> :silent !clear && pdflatex latexSourceFile.tex <CR> <Bar> :redraw! <Cr>
 
 " ,w  - Write out the file - faster than having to [shift] + ; , w , RET
 nnoremap <leader>w :w <CR>
@@ -167,15 +167,16 @@ nnoremap <leader>e :edit <CR>
 nnoremap <leader>s :setlocal spell! <CR>
 
 " kj to exit INSERT mode 
-" inoremap <esc> <nop>          "Force adoption of binding
+" inoremap <esc> <nop>          "Force adoption of binding - worked
 inoremap kj <esc>
 
 " ,p - toggle paste mode
 set pastetoggle=<leader>p
 
-" ,h - toggle zenburn high contrast mode
+" ,hc - toggle zenburn high contrast mode
 nnoremap <leader>hc :call ToggleZenburnHighContrast()<cr>
 
+" toggle high contrast mode of Zenburn, noop for other color schemes
 function! ToggleZenburnHighContrast()
     if g:zenburn_high_Contrast && g:colors_name == "zenburn"
         let g:zenburn_high_Contrast = 0
@@ -187,6 +188,10 @@ function! ToggleZenburnHighContrast()
         hi ColorColumn ctermbg=lightgrey guibg=lightgrey
     endif
 endfunction
+
+" ,jf  - Call eclim format on entire current buffer - only applies to .java
+" files
+autocmd FileType java nnoremap <leader>jf :%JavaFormat
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -227,6 +232,12 @@ autocmd BufReadPost *
 "" set omnifunc=syntaxcomplete#Complete
 
 " Miscellaneous below """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" youcompleteme configuration
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_complete_in_comments = 1
+
+
+" Eclim  configuration
 let g:EclimCompletionMethod = 'omnifunc'
