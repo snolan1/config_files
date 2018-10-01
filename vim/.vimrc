@@ -1,26 +1,28 @@
 " Stephen Nolan
 " .vimrc
 
+" Vundle Section """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" YOUCOMPLETEME PORTION """"""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set nocompatible              " be iMproved, required
+set nocompatible              " supercede legacy vi compatibility, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" **** Managed Plugins listed here
+
+" *** examples here of compatible syntax
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'Valloric/YouCompleteMe'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -33,34 +35,37 @@ Plugin 'Valloric/YouCompleteMe'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-" 
+Plugin 'Valloric/YouCompleteMe'
+ 
+
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
-" Brief help
+
+" Vundle Help resources - Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this linejjkjkjkjkj
+" All non-vundle configuration below
+" TODO consider hoisting the vundle portion out of .vimrc and into its own file
+" (might want to do the same for leader mappings, color schemes, etc)
 
 
-" END YOUCOMPLETEME PORTION """"""""""""""""""""""""""""""""""""""""""""""""""
-
-
-
-
-
-
-
+" END Vundle PORTION """"""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " Steve configuration below """""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
 
 " Enable vim-specific functionality (that is not found in traditional Vi)
 set nocompatible
