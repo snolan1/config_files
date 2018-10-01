@@ -73,6 +73,10 @@ set nocompatible
 " Syntax highlighting
 syntax on
 
+" Copy indent from current line when starting a new line - general 'fallback' to
+" be overridden by filetype-specific indentation when available (enabled below)
+set autoindent 
+
 " Enable filetype detection if it was not yet switched on
 filetype plugin on
 
@@ -91,6 +95,10 @@ set colorcolumn=81
 
 " Show line, column, relative position in file in status line
 set ruler
+
+" General vim folding functionality - 'syntax' style may be preferrable to use on
+" certain filetypes
+set foldmethod=indent
 
 " Number of tabs that can be opened with $ vim -p (default is ~8)
 set tabpagemax=60
@@ -128,8 +136,6 @@ set tabstop=4
 " Keep a 'buffer' of lines around the cursor when near the edge of screen
 set scrolloff=5
 
-" Copy indent from current line when starting a new line
-set autoindent "Auto indent
 
 " 256 color terminal
 set t_Co=256
