@@ -103,6 +103,9 @@ set foldmethod=indent
 " Set threshold on folding depth
 " set foldnestmax=2
 
+" Set buffers to not be folded, by default, when opening
+set nofoldenable
+
 " Number of tabs that can be opened with $ vim -p (default is ~8)
 set tabpagemax=60
 
