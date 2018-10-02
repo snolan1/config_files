@@ -195,19 +195,52 @@ inoremap kj <esc>
 " ,p - toggle paste mode
 set pastetoggle=<leader>p
 
-" ,hc - toggle zenburn high contrast mode
-nnoremap <leader>hc :call ToggleZenburnHighContrast()<cr>
+" ,hc - 'High Contrast' - toggle contrast settings for some colorschemes
+nnoremap <leader>hc :call ToggleColorSchemeContrast()<cr>
 
 " toggle high contrast mode of Zenburn, noop for other color schemes
-function! ToggleZenburnHighContrast()
+function! ToggleColorSchemeContrast()
+
+    " Zenburn low->high
     if g:zenburn_high_Contrast && g:colors_name == "zenburn"
         let g:zenburn_high_Contrast = 0
         colorscheme zenburn
         hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+        redraw
+        echo "zenburn low contrast enabled"
+
+    " Zenburn high->low
     elseif !g:zenburn_high_Contrast && g:colors_name == "zenburn"
         let g:zenburn_high_Contrast = 1
         colorscheme zenburn
         hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+        redraw
+        echo 'zenburn high contrast enabled'
+
+    " Gruvbox hard->medium
+    elseif g:gruvbox_contrast_dark == 'hard' && g:colors_name == "gruvbox"
+        let g:gruvbox_contrast_dark = 'medium'
+        colorscheme gruvbox
+        hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+        redraw
+        echo 'gruvbox medium contrast enabled'
+
+    " Gruvbox medium->soft
+    elseif g:gruvbox_contrast_dark == 'medium' && g:colors_name == "gruvbox"
+        let g:gruvbox_contrast_dark = 'soft'
+        colorscheme gruvbox
+        hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+        redraw
+        echo 'gruvbox soft contrast enabled'
+
+    " Gruvbox soft->hard
+    elseif g:gruvbox_contrast_dark == 'soft' && g:colors_name == "gruvbox"
+        let g:gruvbox_contrast_dark = 'hard'
+        colorscheme gruvbox
+        hi ColorColumn ctermbg=lightgrey guibg=lightgrey
+        redraw
+        echo 'gruvbox hard contrast enabled'
+
     endif
 endfunction
 
@@ -227,6 +260,12 @@ set background=dark
 " Colorscheme
 "colorscheme jellybeans
 "colorscheme solarized
+
+
+" Gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_contrast_dark = 'medium'
+" let g:gruvbox_contrast_dark = 'soft'
 colorscheme gruvbox
 
 
