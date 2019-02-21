@@ -111,3 +111,24 @@
 
 ; Insert a timestamp when toggling org item from a not-Done state to DONE
 (setq org-log-done 'time)
+
+
+
+; files for org-agenda to work with/on - TODO fill in here locally
+(setq org-agenda-files '("filepath...... .org"
+                         "filepath...... .org"
+                         "filepath...... .org"))
+
+
+; capture template - using one for now - TODO fill in here locally
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+                               (file+headline "/file/path/file.org" "Tasks")
+                               "* TODO %i%?")))
+
+
+; binding for quick captures
+(global-set-key "\C-cc" 'org-capture)
+
+; org mode todo states
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
