@@ -104,5 +104,10 @@
 (add-hook 'text-mode-hook '(lambda() (turn-on-auto-fill) (set-fill-column 81)))
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
-;; Open org-mode todo list on startup
-;;(find-file "path here")
+
+;; automatically check for files updated on disk, notify session, prompt for
+;; buffer refresh (adding this for case of working on distributed org files)
+(global-auto-revert-mode t)
+
+; Insert a timestamp when toggling org item from a not-Done state to DONE
+(setq org-log-done 'time)
