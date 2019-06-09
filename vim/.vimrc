@@ -96,6 +96,10 @@ set colorcolumn=81
 " Show line, column, relative position in file in status line
 set ruler
 
+" Add some glyphs to demarcate notable invisible characters like EOL, etc.
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set list
+
 " General vim folding functionality - 'syntax' style may be preferrable to use on
 " certain filetypes
 set foldmethod=indent
