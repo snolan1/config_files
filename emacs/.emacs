@@ -132,6 +132,9 @@
 ; binding for quick captures
 (global-set-key "\C-cc" 'org-capture)
 
+; Start in evil's insert mode when capturing
+(add-hook 'org-capture-mode-hook 'evil-insert-state)
+
 ; org mode todo states
 (setq org-todo-keywords '((sequence "MAYBE(m)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
