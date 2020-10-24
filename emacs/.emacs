@@ -125,8 +125,12 @@
 ; Note the metacharacters for prompting tags etc
 (setq org-capture-templates '(("i" "Inbox [inbox]" entry
                                (file+headline "~/LOCATION OF/org/inbox.org" "Inbox")
-                               "* TODO %i%? %U %^G")
+                               "* %i%? %U %^G")
                               ))
+;(setq org-capture-templates '(("i" "Inbox [inbox]" entry
+;                               (file+headline "~/LOCATION OF/org/inbox.org" "Inbox")
+;                               "* TODO %i%? %U %^G")
+;                              ))
 
 
 ; binding for quick captures
