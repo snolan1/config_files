@@ -40,11 +40,11 @@
 (require 'powerline-evil)
 (powerline-evil-vim-theme)
 
-(require 'relative-line-numbers)
+;(require 'relative-line-numbers)
 ;; Enable line numbering - NOT RELATIVE
 ;;(global-linum-mode t)
 ;; Enable relative line numbering linum-mode MUST BE TURNED OFF
-(global-relative-line-numbers-mode)
+;(global-relative-line-numbers-mode)
 
 ;; Enable automatic indentation
 (define-key global-map (kbd "RET") 'newline-and-indent)
