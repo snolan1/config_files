@@ -26,7 +26,7 @@
 
 
 ;; Solarized theme ;;; package name is solarized-theme
-(load-theme 'solarized-light t)
+;(load-theme 'solarized-light t)
 
 ;; Zenburn theme - package name is zenburn-theme
 ;;(load-theme 'zenburn t)
