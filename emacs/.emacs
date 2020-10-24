@@ -2,6 +2,8 @@
 ;; Enable Package Manager
 (require 'package)
 
+; Sometimes needed for outdated repo keys
+;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 ;; Package sources
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -58,14 +60,15 @@
 ;; Disable GUI scroll-bars
 (scroll-bar-mode -1)
 
-;; Start in fullscreen mode
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(initial-frame-alist (quote ((fullscreen . maximized))))
- '(show-paren-mode t))
+; ;; Start in fullscreen mode - all other custom face information will be
+; combined into this
+; (custom-set-variables
+;  ;; custom-set-variables was added by Custom.
+;  ;; If you edit it by hand, you could mess it up, so be careful.
+;  ;; Your init file should contain only one such instance.
+;  ;; If there is more than one, they won't work right.
+;  '(initial-frame-alist (quote ((fullscreen . maximized))))
+;  '(show-paren-mode t))
 
 ;; Highlight the current line
 (global-hl-line-mode 1)
@@ -93,12 +96,6 @@
 (key-chord-define evil-insert-state-map "kj" 'evil-normal-state)
 
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#fdf6e3" :foreground "#657b83" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Ubuntu Mono")))))
 
 ;; Auto-wrap at 80 lines for text-mode and modes based off of it - for instance org-mode
 (add-hook 'text-mode-hook '(lambda() (turn-on-auto-fill) (set-fill-column 81)))
@@ -113,22 +110,34 @@
 (setq org-log-done 'time)
 
 
-
 ; files for org-agenda to work with/on - TODO fill in here locally
-(setq org-agenda-files '("filepath...... .org"
-                         "filepath...... .org"
-                         "filepath...... .org"))
+(setq org-agenda-files '("~/LOCATION OF/org/"))
+
+; refile targets up to 3 levels deep in all of the above
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
 
-; capture template - using one for now - TODO fill in here locally
-(setq org-capture-templates '(("t" "Todo [inbox]" entry
-                               (file+headline "/file/path/file.org" "Tasks")
-                               "* TODO %i%?")))
+; Tags should be available for use (and completion) across files
+(setq org-complete-tags-always-offer-all-agenda-tags t)
+
+
+; capture templates - TODO fill in here locally
+; Note the metacharacters for prompting tags etc
+(setq org-capture-templates '(("i" "Inbox [inbox]" entry
+                               (file+headline "~/LOCATION OF/org/inbox.org" "Inbox")
+                               "* TODO %i%? %U %^G")
+                              ))
 
 
 ; binding for quick captures
 (global-set-key "\C-cc" 'org-capture)
 
 ; org mode todo states
-(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-todo-keywords '((sequence "MAYBE(m)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+
+
+
+;; Common lisp / SLIME helpers for machines that need that
+;(load (expand-file-name "~/.quicklisp/slime-helper.el"))
+;(setq inferior-lisp-program "sbcl")
 
