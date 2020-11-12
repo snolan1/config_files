@@ -1,2 +1,0 @@
-Copy the nord.theme file to the local configuration directory
-~/.local/share/xfce4/terminal/colorschemes.
