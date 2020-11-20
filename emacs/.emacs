@@ -144,6 +144,11 @@
 ; org mode todo states
 (setq org-todo-keywords '((sequence "MAYBE(m)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
+; block parent headings from DONE states if any children are not DONE
+(setq org-enforce-todo-dependencies t)
+
+; block parent headings from DONE states if any checkboxes are unfilled
+(setq org-enforce-todo-checkbox-dependencies t)
 
 
 ;; Common lisp / SLIME helpers for machines that need that
