@@ -73,6 +73,8 @@
 ;; Highlight the current line
 (global-hl-line-mode 1)
 
+; use ibuffer by default, in place of default list-buffers
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Ruler at 81 columns
 (require 'fill-column-indicator)
