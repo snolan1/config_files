@@ -21,5 +21,8 @@ bindkey "^N" down-line-or-search
 # Ctrl-R incremental search backward
 bindkey "^R" history-incremental-pattern-search-backward
 
+# Enable completion
+autoload -Uz compinit && compinit -i
+
 # Confirm message
 echo "Steve zsh preferences loaded."
