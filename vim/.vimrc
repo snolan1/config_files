@@ -80,7 +80,17 @@ set wildmode=longest,list,full
 set wildmenu
 
 " Yank to system clipboard when possible
-set clipboard=unnamedplus
+"
+" This will usually work for macOS. The installed vim just needs to have been
+" compiled with 'clipboard' feature
+if has("clipboard")
+    set clipboard=unnamed
+endif
+
+" For X11 systems
+if has("unnamedplus")
+    set clipboard+=unnamedplus
+endif
 
 " Encoding and end-of-line
 set encoding=utf8
