@@ -41,7 +41,8 @@ filetype plugin on
 " Load filetype-specific indent rules
 filetype plugin indent on
 
-" Relative line numbering
+" Relative line numbering, except for absolute numbering on line holding cursor
+set number
 set relativenumber
 
 " Highlight the current line and column
