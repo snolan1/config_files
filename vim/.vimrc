@@ -115,6 +115,9 @@ set tabstop=4
 " Keep a 'buffer' of lines around the cursor when near the edge of screen
 set scrolloff=5
 
+" Don't redraw during execution of macros (also applies to other operations that
+" aren't typed). Large/complex macro operations can complete much faster
+set lazyredraw
 
 " 256 color terminal
 set t_Co=256
