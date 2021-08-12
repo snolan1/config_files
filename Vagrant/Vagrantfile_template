@@ -1,0 +1,67 @@
+# Steve Nolan
+#
+# Vagrantfile template for single-box provisioning
+#
+# Usage: Set directives as desired in configuration section. Note that this file
+#        will assume VirtualBox as a provider.
+
+############################# Configuration start ##############################
+
+# Base Box Selection
+# Many more available at https://app.vagrantup.com/boxes/search
+BASE_VAGRANT_BOX = "ubuntu/focal64"                 # Ubuntu 20.04LTS
+#BASE_VAGRANT_BOX = "kalilinux/rolling"             # Kali Linux
+#BASE_VAGRANT_BOX = "freebsd/FreeBSD-13.0-STABLE"   # FreeBSD 13
+#BASE_VAGRANT_BOX = "generic/openbsd6"              # OpenBSD 6
+#BASE_VAGRANT_BOX = "centos/8"                      # CentOS 8
+#BASE_VAGRANT_BOX = "debian/buster64"               # Debian 10
+#BASE_VAGRANT_BOX = "fedora/34-cloud-base"          # Fedora 34
+#BASE_VAGRANT_BOX = "archlinux/archlinux"           # Arch Linux
+#BASE_VAGRANT_BOX = "generic/gentoo"                # Gentoo Linux
+
+# Should boxes be checked for updates before coming up? (default is true)
+ENSURE_BOX_UP_TO_DATE = true
+#ENSURE_BOX_UP_TO_DATE = false
+
+# Virtualbox Settings
+VM_NAME = "development environment"
+VM_CPU_COUNT = 4
+VM_RAM_MB = 4096
+
+# Should the GUI console be opened when the machine boots? (default is false)
+#VM_SHOW_CONSOLE_WINDOW = true
+VM_SHOW_CONSOLE_WINDOW = false
+
+# Hostname of that actual VM itself
+VM_HOSTNAME = "ubuntu-seed"
+
+############################# Configuration end ################################
+
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = BASE_VAGRANT_BOX
+  config.vm.box_check_update = ENSURE_BOX_UP_TO_DATE
+  config.vm.hostname = VM_HOSTNAME
+
+
+  # VirtualBox-specific configuration
+  config.vm.provider "virtualbox" do |vb|
+
+    # CPU and RAM allocation
+    vb.cpus = VM_CPU_COUNT
+    vb.memory = VM_RAM_MB
+
+    # Name of the Virtual Machine in the Virtual Box UI
+    vb.name = VM_NAME
+
+    # Pop up console window when the VM starts?
+    vb.gui = VM_SHOW_CONSOLE_WINDOW
+
+  end
+
+end
+
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
