@@ -10,19 +10,8 @@
 #              source ~/.bashrc_steve
 #          fi
 
-# "Force tmux to assume the terminal supports 256 colors"
-# alias tmux='tmux -2'
-
-# This is the only way I have found to be able to use 
-# the solarized colorscheme for vim inside of tmux on current Xubuntu 16.04
-# machines
-alias tmux="TERM=screen-256color-bce tmux"
-
 # VI-mode 
 set -o vi
-
-# Debian/*buntu <= 14.04 update
-#alias uptodate='clear && sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
 # Debian/*buntu machines only
 alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade'
@@ -38,3 +27,25 @@ alias view='nvim -R'
 alias vim='nvim'
 
 echo "Steve bash preferences loaded."
+
+
+
+
+#### Old/Archived ##############################################################
+
+# "Force tmux to assume the terminal supports 256 colors"
+# alias tmux='tmux -2'
+
+# This is the only way I have found to be able to use 
+# the solarized colorscheme for vim inside of tmux on current Xubuntu 16.04
+# machines
+# alias tmux="TERM=screen-256color-bce tmux"
+
+
+# Debian/*buntu <= 14.04 update
+#alias uptodate='clear && sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+
+
+# PS1 taken from a recent kali build
+#\[\e]0;\u@\h: \w\a\]\[\033[;32m\]┌──(\[\033[1;34m\]\u\h\[\033[;32m\])-[\[\033[0;1m\]\w\[\033[;32m\]]\n\[\033[;32m\]└─\[\033[1;34m\]$\[\033[0m\]
+
