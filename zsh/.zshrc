@@ -10,6 +10,9 @@
 alias ls='ls -G'
 alias ll='ls -alF'
 alias grep='grep --color=auto'
+alias view='nvim -R'
+alias vimdiff='nvim -d'
+alias vim='nvim'
 
 # VI-mode enabled
 bindkey -v
