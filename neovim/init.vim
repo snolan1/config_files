@@ -8,16 +8,19 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
     let &packpath = &runtimepath
 
+" For now I'm only using vim-plug on non-mac
+if has ('mac') == 0
+    " vim-plug section """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        " Specify a directory for plugins
+        " - For Neovim: stdpath('data') . '/plugged'
+        " - Avoid using standard Vim directory names like 'plugin'
+    call plug#begin('~/.vim/plugged')
 
-" vim-plug section """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Specify a directory for plugins
-    " - For Neovim: stdpath('data') . '/plugged'
-    " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    call plug#end()
+endif
 
-call plug#end()
 
 
 " Behavior Section  """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
