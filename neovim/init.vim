@@ -229,6 +229,8 @@ autocmd FileType java nnoremap <leader>jf :%JavaFormat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Try to utilize 'true color'
+set termguicolors
 
 " Vim will try to use colors that look good on a dark or light background
 "set background=light
