@@ -229,8 +229,14 @@ autocmd FileType java nnoremap <leader>jf :%JavaFormat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Try to utilize 'true color'
 set termguicolors
+
+" Turn off for mac (specifically Terminal.app)
+if has ('mac') == 1
+    set notermguicolors
+endif
 
 " Vim will try to use colors that look good on a dark or light background
 "set background=light
