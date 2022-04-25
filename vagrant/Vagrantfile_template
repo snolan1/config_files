@@ -9,7 +9,8 @@
 
 # Base Box Selection
 # Many more available at https://app.vagrantup.com/boxes/search
-BASE_VAGRANT_BOX = "ubuntu/focal64"                 # Ubuntu 20.04LTS
+BASE_VAGRANT_BOX = "ubuntu/jammy64"                 # Ubuntu 22.04LTS
+#BASE_VAGRANT_BOX = "ubuntu/focal64"                # Ubuntu 20.04LTS
 #BASE_VAGRANT_BOX = "kalilinux/rolling"             # Kali Linux
 #BASE_VAGRANT_BOX = "freebsd/FreeBSD-13.0-STABLE"   # FreeBSD 13
 #BASE_VAGRANT_BOX = "generic/openbsd6"              # OpenBSD 6
