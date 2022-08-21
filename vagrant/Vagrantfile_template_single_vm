@@ -12,11 +12,11 @@
 BASE_VAGRANT_BOX = "ubuntu/jammy64"                 # Ubuntu 22.04LTS
 #BASE_VAGRANT_BOX = "ubuntu/focal64"                # Ubuntu 20.04LTS
 #BASE_VAGRANT_BOX = "kalilinux/rolling"             # Kali Linux
-#BASE_VAGRANT_BOX = "freebsd/FreeBSD-13.0-STABLE"   # FreeBSD 13
-#BASE_VAGRANT_BOX = "generic/openbsd6"              # OpenBSD 6
+#BASE_VAGRANT_BOX = "freebsd/FreeBSD-14.0-STABLE"   # FreeBSD 14
+#BASE_VAGRANT_BOX = "generic/openbsd7"              # OpenBSD 7
 #BASE_VAGRANT_BOX = "centos/8"                      # CentOS 8
-#BASE_VAGRANT_BOX = "debian/buster64"               # Debian 10
-#BASE_VAGRANT_BOX = "fedora/34-cloud-base"          # Fedora 34
+#BASE_VAGRANT_BOX = "debian/bullseye64"             # Debian 11
+#BASE_VAGRANT_BOX = "fedora/36-cloud-base"          # Fedora 36
 #BASE_VAGRANT_BOX = "archlinux/archlinux"           # Arch Linux
 #BASE_VAGRANT_BOX = "generic/gentoo"                # Gentoo Linux
 
