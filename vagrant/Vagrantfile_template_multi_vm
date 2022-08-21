@@ -1,0 +1,174 @@
+# Steve Nolan
+#
+# Vagrantfile template for multi-box provisioning
+#
+# Usage: There are 2 different styles outlined here. 
+#        One uses looping to concisely generate a series of similar boxes.
+#        The other is for per-box declaration. This allows for finer
+#        granularity on each box for naming, provisioning, and allocations.
+#        This file assumes VirtualBox as a provider.
+
+############################# Style 1 - looping ################################
+
+# Multi-machine environment
+Vagrant.configure("2") do |config|
+  (1..5).each do |i|
+    config.vm.define "node-#{i}" do |node|
+      node.vm.box = "ubuntu/jammy64"
+      #node.vm.network "private_network", ip: "192.168.10.21"
+      node.vm.hostname = "node-#{i}"
+      node.vm.provider :virtualbox do |vb|
+        vb.cpus = 1
+        vb.memory = 4096
+        vb.name = "node-#{i}"
+        vb.gui = false
+      end
+    end
+  end
+
+end
+ 
+############################# Style 2 - specify each box #######################
+
+# Multi-machine environment
+#Vagrant.configure("2") do |config|
+#
+#  config.vm.define "node1" do |node1|
+#    #node1.ssh.insert_key = false
+#    node1.vm.box = "ubuntu/jammy64"
+#    #node1.vm.network "private_network", ip: "192.168.10.21"
+#    node1.vm.hostname = "node1"
+#    node1.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node1"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node2" do |node2|
+#    #node2.ssh.insert_key = false
+#    node2.vm.box = "ubuntu/jammy64"
+#    #node2.vm.network "private_network", ip: "192.168.10.21"
+#    node2.vm.hostname = "node2"
+#    node2.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node2"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node3" do |node3|
+#    #node3.ssh.insert_key = false
+#    node3.vm.box = "ubuntu/jammy64"
+#    #node3.vm.network "private_network", ip: "192.168.10.21"
+#    node3.vm.hostname = "node3"
+#    node3.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node3"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node4" do |node4|
+#    #node4.ssh.insert_key = false
+#    node4.vm.box = "ubuntu/jammy64"
+#    #node4.vm.network "private_network", ip: "192.168.10.21"
+#    node4.vm.hostname = "node4"
+#    node4.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node4"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node5" do |node5|
+#    #node5.ssh.insert_key = false
+#    node5.vm.box = "ubuntu/jammy64"
+#    #node5.vm.network "private_network", ip: "192.168.10.21"
+#    node5.vm.hostname = "node5"
+#    node5.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node5"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node6" do |node6|
+#    #node6.ssh.insert_key = false
+#    node6.vm.box = "ubuntu/jammy64"
+#    #node6.vm.network "private_network", ip: "192.168.10.21"
+#    node6.vm.hostname = "node6"
+#    node6.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node6"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node7" do |node7|
+#    #node7.ssh.insert_key = false
+#    node7.vm.box = "ubuntu/jammy64"
+#    #node7.vm.network "private_network", ip: "192.168.10.21"
+#    node7.vm.hostname = "node7"
+#    node7.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node7"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node8" do |node8|
+#    #node8.ssh.insert_key = false
+#    node8.vm.box = "ubuntu/jammy64"
+#    #node8.vm.network "private_network", ip: "192.168.10.21"
+#    node8.vm.hostname = "node8"
+#    node8.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node8"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node9" do |node9|
+#    #node9.ssh.insert_key = false
+#    node9.vm.box = "ubuntu/jammy64"
+#    #node9.vm.network "private_network", ip: "192.168.10.21"
+#    node9.vm.hostname = "node9"
+#    node9.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node9"
+#      vb.gui = false
+#    end
+#  end
+#
+#  config.vm.define "node10" do |node10|
+#    #node6.ssh.insert_key = false
+#    node10.vm.box = "ubuntu/jammy64"
+#    #node10.vm.network "private_network", ip: "192.168.10.21"
+#    node10.vm.hostname = "node10"
+#    node10.vm.provider :virtualbox do |vb|
+#      vb.cpus = 1
+#      vb.memory = 2048
+#      vb.name = "node10"
+#      vb.gui = false
+#    end
+#  end
+#end
+
+
+
+
+
+
+
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
