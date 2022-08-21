@@ -17,6 +17,7 @@ if has ('mac') == 0
     call plug#begin('~/.vim/plugged')
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'morhertz/gruvbox'
 
     call plug#end()
 endif
