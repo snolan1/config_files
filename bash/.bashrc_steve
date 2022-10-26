@@ -13,8 +13,8 @@
 # VI-mode 
 set -o vi
 
-# Debian/*buntu machines only
-alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade'
+# System updates convenience alias for *buntu/Debian machines
+alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
 
 # macOS only
 # alias ls='ls -G'
