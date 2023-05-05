@@ -65,7 +65,7 @@ set relativenumber
 
 " Highlight the current line and column
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 
 " Show a guide line at column 81
 set colorcolumn=81
