@@ -14,7 +14,17 @@
 set -o vi
 
 # System updates convenience alias for *buntu/Debian machines
-alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
+#alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
+function uptodate() {
+    printf "\n*** Apt updates ***********************************************************\n";
+    sudo apt autoclean && \
+    sudo apt autoremove && \
+    sudo apt update && \
+    sudo apt upgrade && \
+    sudo apt dist-upgrade && \
+    printf "\n*** Snap updates **********************************************************\n";
+    sudo snap refresh;
+}
 
 # macOS only
 # alias ls='ls -G'
