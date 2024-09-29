@@ -1,8 +1,7 @@
 # Stephen Nolan
 # .bashrc_steve
 # 
-# My bash customizations in a separate file. Xubuntu, for example, already
-# has things in .bashrc that I don't want to overwrite. 
+# My bash customizations.
 #
 # Source this from .bash_profile or .bashrc as appropriate. 
 
@@ -16,6 +15,7 @@ set -o vi
 
 # System updates convenience alias for *buntu/Debian machines
 function uptodate() {
+    local BOLD_RED_COLOR="\e[1;31m"
     local BOLD_GREEN_COLOR="\e[1;32m"
     local RESET_COLOR="\e[0m"
 
@@ -30,22 +30,21 @@ function uptodate() {
     sudo snap refresh;
 }
 
-# neovim aliases for "vimdiff" and "view" (Some distros take care of this during install)
+# neovim aliases for "vimdiff" and "view" (Some distros take care of this during package install)
 alias vimdiff='nvim -d'
 alias view='nvim -R'
 alias vim='nvim'
-
-# macOS only
-# alias ls='ls -G'
-# alias ll='ls -alF'
-# alias grep='grep --color=auto'
 
 echo "Steve bash preferences loaded."
 
 
 
-
 #### Old/Archived ##############################################################
+
+# macOS only (bash era)
+# alias ls='ls -G'
+# alias ll='ls -alF'
+# alias grep='grep --color=auto'
 
 # "Force tmux to assume the terminal supports 256 colors"
 # alias tmux='tmux -2'
