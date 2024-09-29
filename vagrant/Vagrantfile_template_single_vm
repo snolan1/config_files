@@ -9,22 +9,23 @@
 
 # Base Box Selection
 # Many more available at https://app.vagrantup.com/boxes/search
+BASE_VAGRANT_BOX = "debian/bookworm64"             # Debian 12
 #BASE_VAGRANT_BOX = "ubuntu/lunar64"                # Ubuntu 23.04
 #BASE_VAGRANT_BOX = "ubuntu/kinetic64"              # Ubuntu 22.10
-BASE_VAGRANT_BOX = "ubuntu/jammy64"                # Ubuntu 22.04LTS
+#BASE_VAGRANT_BOX = "ubuntu/jammy64"                # Ubuntu 22.04LTS
 #BASE_VAGRANT_BOX = "ubuntu/focal64"                # Ubuntu 20.04LTS
-#BASE_VAGRANT_BOX = "debian/bullseye64"             # Debian 11
 #BASE_VAGRANT_BOX = "kalilinux/rolling"             # Kali Linux
-#BASE_VAGRANT_BOX = "freebsd/FreeBSD-14.0-STABLE"   # FreeBSD 14
+#BASE_VAGRANT_BOX = "freebsd/FreeBSD-14.1-STABLE"   # FreeBSD 14.1
 #BASE_VAGRANT_BOX = "generic/openbsd7"              # OpenBSD 7
 #BASE_VAGRANT_BOX = "generic/gentoo"                # Gentoo Linux
 #BASE_VAGRANT_BOX = "archlinux/archlinux"           # Arch Linux
-#BASE_VAGRANT_BOX = "fedora/38-cloud-base"          # Fedora 38
+#BASE_VAGRANT_BOX = "fedora/40-cloud-base"          # Fedora 40
 #BASE_VAGRANT_BOX = "almalinux/8"                   # AlmaLinux OS 8
 #BASE_VAGRANT_BOX = "almalinux/9"                   # AlmaLinux OS 9
 #BASE_VAGRANT_BOX = "rockylinux/8"                  # Rocky Linux 8
 #BASE_VAGRANT_BOX = "rockylinux/9"                  # Rocky Linux 9
 #BASE_VAGRANT_BOX = "centos/8"                      # CentOS 8
+#BASE_VAGRANT_BOX = "centos/stream9"                # CentOS Stream 9
 
 
 # Should boxes be checked for updates before coming up? (default is true)
