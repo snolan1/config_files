@@ -10,33 +10,35 @@
 #              source ~/.bashrc_steve
 #          fi
 
+
 # VI-mode 
 set -o vi
 
 # System updates convenience alias for *buntu/Debian machines
-#alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
 function uptodate() {
     local BOLD_GREEN_COLOR="\e[1;32m"
     local RESET_COLOR="\e[0m"
+
     printf "\n*** ${BOLD_GREEN_COLOR}Apt updates${RESET_COLOR} ***********************************************************\n";
     sudo apt autoclean && \
     sudo apt autoremove && \
     sudo apt update && \
     sudo apt upgrade && \
     sudo apt dist-upgrade && \
+
     printf "\n*** ${BOLD_GREEN_COLOR}Snap updates${RESET_COLOR} ***********************************************************\n";
     sudo snap refresh;
 }
+
+# neovim aliases for "vimdiff" and "view" (Some distros take care of this during install)
+alias vimdiff='nvim -d'
+alias view='nvim -R'
+alias vim='nvim'
 
 # macOS only
 # alias ls='ls -G'
 # alias ll='ls -alF'
 # alias grep='grep --color=auto'
-
-# neovim aliases for "vimdiff" and "view"
-alias vimdiff='nvim -d'
-alias view='nvim -R'
-alias vim='nvim'
 
 echo "Steve bash preferences loaded."
 
@@ -57,6 +59,8 @@ echo "Steve bash preferences loaded."
 # Debian/*buntu <= 14.04 update
 #alias uptodate='clear && sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
 
+# System updates convenience alias for *buntu/Debian machines
+#alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
 
 # PS1 taken from a recent kali build
 #\[\e]0;\u@\h: \w\a\]\[\033[;32m\]┌──(\[\033[1;34m\]\u\h\[\033[;32m\])-[\[\033[0;1m\]\w\[\033[;32m\]]\n\[\033[;32m\]└─\[\033[1;34m\]$\[\033[0m\]
