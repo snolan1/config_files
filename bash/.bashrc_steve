@@ -16,13 +16,15 @@ set -o vi
 # System updates convenience alias for *buntu/Debian machines
 #alias uptodate='clear && sudo apt autoclean && sudo apt autoremove && sudo apt update && sudo apt upgrade && sudo apt dist-upgrade && sudo snap refresh'
 function uptodate() {
-    printf "\n*** Apt updates ***********************************************************\n";
+    local BOLD_GREEN_COLOR="\e[1;32m"
+    local RESET_COLOR="\e[0m"
+    printf "\n*** ${BOLD_GREEN_COLOR}Apt updates${RESET_COLOR} ***********************************************************\n";
     sudo apt autoclean && \
     sudo apt autoremove && \
     sudo apt update && \
     sudo apt upgrade && \
     sudo apt dist-upgrade && \
-    printf "\n*** Snap updates **********************************************************\n";
+    printf "\n*** ${BOLD_GREEN_COLOR}Snap updates${RESET_COLOR} ***********************************************************\n";
     sudo snap refresh;
 }
 
