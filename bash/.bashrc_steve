@@ -28,7 +28,21 @@ function uptodate() {
 
     printf "\n*** ${BOLD_GREEN_COLOR}Snap updates${RESET_COLOR} ***********************************************************\n";
     sudo snap refresh;
+
+    if [ -f /var/run/reboot-required ]; then
+        printf "\n*** ${BOLD_RED_COLOR}System needs a reboot!${RESET_COLOR} ***********************************************************";
+        printf "\n*** ${BOLD_RED_COLOR}For these packages:${RESET_COLOR} ***********************************************************\n";
+        cat /var/run/reboot-required.pkgs
+
+    else
+        printf "\n*** ${BOLD_GREEN_COLOR}No system reboot needed at this time...${RESET_COLOR} ***********************************************************\n";
+
+    fi
 }
+
+# More room in bash history
+HISTSIZE=-1
+HISTFILESIZE=9999999999
 
 # neovim aliases for "vimdiff" and "view" (Some distros take care of this during package install)
 alias vimdiff='nvim -d'
