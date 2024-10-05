@@ -1,0 +1,32 @@
+# I know it's very common to do something like:
+# 	%sudo ALL=(ALL:ALL) NOPASSWD:ALL
+# in /etc/sudoers, but that is generally not the approach I like to take.
+#
+# Where possible, I prefer to scope things more directly. 
+# In the sudoers manpage there is a whole extended Backus–Naur form (EBNF)
+# grammar that is laid out. There is very flexible functionality for setting up
+# things like aliases (which can be comprised of lists), and default overrides.
+#
+# From sudoers(5):
+#
+#   User specification
+#     User_Spec ::= User_List Host_List '=' Cmnd_Spec_List \
+#                   (':' Host_List '=' Cmnd_Spec_List)*
+#
+
+# A couple of sample entries for reference consideration:
+
+user1 laptop1 = NOPASSWD: /usr/bin/somebinary
+
+user2 workstation2 = NOPASSWD: sha256:9ff0de4810dc60cd3f7710ab89a7d020e3d34cc94a072ba8d1fe3e202a7c74e1 /usr/bin/somecommand
+
+someuser CSNETS = (operator) /usr/local/op_commands/
+
+# Do note the option now (at least in Debian-derived systems) for using 
+# @includedir or #includedir directives in the system sudoers file to reference
+# another dir like /etc/sudoers.d/ that can contain broken out rules files to be
+# parsed individually.
+
+# Something else I found interesting is that sudo seems to just produce a 
+# generic-looking "parse error" on STDERR and in system security logs if a 
+# Digest is provided but is malformed (like a SHA256 digest != 64 characters).
