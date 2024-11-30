@@ -16,6 +16,7 @@ BASE_VAGRANT_BOX = "debian/bookworm64"             # Debian 12
 #BASE_VAGRANT_BOX = "ubuntu/focal64"                # Ubuntu 20.04LTS
 #BASE_VAGRANT_BOX = "kalilinux/rolling"             # Kali Linux
 #BASE_VAGRANT_BOX = "freebsd/FreeBSD-14.1-STABLE"   # FreeBSD 14.1
+#BASE_VAGRANT_BOX = "freebsd/FreeBSD-15.0-CURRENT"  # FreeBSD 15.0
 #BASE_VAGRANT_BOX = "generic/openbsd7"              # OpenBSD 7
 #BASE_VAGRANT_BOX = "generic/gentoo"                # Gentoo Linux
 #BASE_VAGRANT_BOX = "archlinux/archlinux"           # Arch Linux
