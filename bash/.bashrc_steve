@@ -9,12 +9,40 @@
 #              source ~/.bashrc_steve
 #          fi
 
+OS_TYPE=$(uname -s)
+if [ $OS_TYPE = "FreeBSD" ]; then
+
+    # neovim
+    alias vimdiff='nvim -d'
+    alias view='nvim -R'
+    alias vim='nvim'
+
+    # shell
+    alias ls='ls -G'
+    alias ll='ls -alF'
+    alias grep='grep --color=auto'
+fi
 
 # VI-mode 
 set -o vi
 
+# System updates convenience alias for FreeBSD machines tracking RELEASE
+function bsd_uptodate() {
+    local BOLD_RED_COLOR="\e[1;31m"
+    local BOLD_GREEN_COLOR="\e[1;32m"
+    local RESET_COLOR="\e[0m"
+
+    printf "\n*** ${BOLD_GREEN_COLOR}freebsd-update updates${RESET_COLOR} ***********************************************************\n";
+    sudo freebsd-update fetch;
+    sudo freebsd-update install;
+
+    printf "\n*** ${BOLD_GREEN_COLOR}pkg updates${RESET_COLOR} ***********************************************************\n";
+    sudo pkg update;
+    sudo pkg upgrade
+}
+
 # System updates convenience alias for *buntu/Debian machines
-function uptodate() {
+function deb_uptodate() {
     local BOLD_RED_COLOR="\e[1;31m"
     local BOLD_GREEN_COLOR="\e[1;32m"
     local RESET_COLOR="\e[0m"
@@ -44,10 +72,7 @@ function uptodate() {
 HISTSIZE=-1
 HISTFILESIZE=9999999999
 
-# neovim aliases for "vimdiff" and "view" (Some distros take care of this during package install)
-alias vimdiff='nvim -d'
-alias view='nvim -R'
-alias vim='nvim'
+
 
 echo "Steve bash preferences loaded."
 
@@ -68,6 +93,10 @@ echo "Steve bash preferences loaded."
 # machines
 # alias tmux="TERM=screen-256color-bce tmux"
 
+# # neovim aliases for "vimdiff" and "view" (Some distros take care of this during package install)
+# alias vimdiff='nvim -d'
+# alias view='nvim -R'
+# alias vim='nvim'
 
 # Debian/*buntu <= 14.04 update
 #alias uptodate='clear && sudo apt-get autoclean && sudo apt-get autoremove && sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
