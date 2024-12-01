@@ -18,7 +18,9 @@ if [ $OS_TYPE = "FreeBSD" ]; then
     alias vim='nvim'
 
     # shell
+    alias l='ls -CF'
     alias ls='ls -G'
+    alias la='ls -A'
     alias ll='ls -alF'
     alias grep='grep --color=auto'
 fi
