@@ -150,6 +150,11 @@
 ; block parent headings from DONE states if any checkboxes are unfilled
 (setq org-enforce-todo-checkbox-dependencies t)
 
+; Org Priorities A->E, default agenda bucket handling @E for entries missing
+; priority cookie
+(setq org-priority-highest ?A
+      org-priority-lowest  ?E
+      org-priority-default ?E)
 
 ;; Common lisp / SLIME helpers for machines that need that
 ;(load (expand-file-name "~/.quicklisp/slime-helper.el"))
