@@ -84,6 +84,14 @@ function ,tmux() {
     tmux attach-session -d -t sn;
 }
 
+
+# 1-shot grab everything in current working image pool
+function ,dockerbigpull() {
+    docker system prune --force --volumes;
+    parallel --keep-order docker pull {} ::: $(docker image list --format "table {{.Repository}}:{{.Tag}}" | grep -v "REPOSITORY:TAG" | sort);
+    docker system prune --force --volumes;
+}
+
 echo "Steve bash preferences loaded."
 
 
