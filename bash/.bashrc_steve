@@ -74,7 +74,15 @@ function deb_uptodate() {
 HISTSIZE=-1
 HISTFILESIZE=9999999999
 
-
+# tmux base
+function ,tmux() {
+    tmux new-session -d -s sn;
+    tmux rename-window updates;
+    tmux new-window -d -n git;
+    tmux new-window -d -n ansible;
+    tmux new-window -d -n kubernetes;
+    tmux attach-session -d -t sn;
+}
 
 echo "Steve bash preferences loaded."
 
