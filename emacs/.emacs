@@ -142,7 +142,7 @@
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
 ; org mode todo states
-(setq org-todo-keywords '((sequence "MAYBE(m)" "TODO(t)" "NEXT(n)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(setq org-todo-keywords '((sequence "MAYBE(m)" "TODO(t)" "NEXT(n)" "IN PROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ; block parent headings from DONE states if any children are not DONE
 (setq org-enforce-todo-dependencies t)
